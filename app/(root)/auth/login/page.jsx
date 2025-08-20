@@ -22,6 +22,7 @@ import {
 import { Input } from "@/components/ui/input";
 import ButtonLoading from "@/components/Application/ButtonLoading";
 import Link from "next/link";
+import { WEBSITE_REGISTER } from "@/routes/WebsiteRoute";
 const LoginPage = () => {
   const [login, setLogin] = useState(false);
   const [isTypePassword, setIsTypePassword] = useState(true);
@@ -108,15 +109,16 @@ const LoginPage = () => {
                 />
 
                 <ButtonLoading
+                // loading={loading}
                   type="submit"
                   text="login"
-                  className="w-full mt-3"
+                  className="w-full  "
                 />
               </div>
               <div className="text-center">
                 <div className="flex justify-center items-center gap-1">
                   <p>Dont have account?</p>
-                  <Link href=" " className="text-primary underline">
+                  <Link href={WEBSITE_REGISTER}className="text-primary underline">
                     Create account!
                   </Link>
                 </div>

@@ -24,8 +24,10 @@ import ButtonLoading from "@/components/Application/ButtonLoading";
 import Link from "next/link";
 import { WEBSITE_REGISTER } from "@/routes/WebsiteRoute";
 const LoginPage = () => {
-  const [login, setLogin] = useState(false);
+  const [loading, setLoading] = useState(false);
   const [isTypePassword, setIsTypePassword] = useState(true);
+  
+  
   const formSchema = zSchema.pick({
     email: true,
     password: true,
@@ -109,10 +111,10 @@ const LoginPage = () => {
                 />
 
                 <ButtonLoading
-                // loading={loading}
+                 loading={loading}
                   type="submit"
                   text="login"
-                  className="w-full  "
+                  className="w-full cursor-pointer"
                 />
               </div>
               <div className="text-center">
@@ -123,7 +125,7 @@ const LoginPage = () => {
                   </Link>
                 </div>
                 <div className="mt-3">
-                  <Link href=" " className="text-primary underline">
+                  <Link href="" className="text-primary underline">
                     Forget Password
                   </Link>
                 </div>
